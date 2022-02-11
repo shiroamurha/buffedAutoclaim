@@ -1,11 +1,9 @@
 import requests
-from requests.auth import HTTPBasicAuth
+#from requests.auth import HTTPBasicAuth
 from time import sleep
 
-#auth = HTTPBasicAuth('alayouey@gmail.com', 'shiro123', 'GDmzexCFXz')
+
 request = requests.Session()
-
-
 
 obj = request.request(
     'get', 
@@ -17,9 +15,10 @@ obj = request.request(
 
 html = open('request_html.html', 'w')
 #html.write(f'{obj.text}')
-html.close()
+
 print(obj)
 
+html.close()
 
 #
 #
