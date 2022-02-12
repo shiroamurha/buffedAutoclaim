@@ -1,32 +1,12 @@
-import requests
-#from requests.auth import HTTPBasicAuth
+from selenium import webdriver
+import os
 from time import sleep
 
 
-request = requests.Session()
+local_path = rf'{os.path.dirname(os.path.realpath(__file__))}\\chromedriver.exe'
 
-obj = request.request(
-    'get', 
-    'https://firefaucet.win/start',
-    cookies={
-        'session': 'e59670da-60ae-4559-a555-12f533cd317c.0vtn4o3qMik_cK3hJliW2uKCQUM'
-    }
-)
+driver = webdriver.Chrome(executable_path=local_path)
 
-html = open('request_html.html', 'w')
-#html.write(f'{obj.text}')
-
-print(obj)
-
-html.close()
-
-#
-#
-# print(request.headers)
-
-
-
-
-
-
- # cookies='e59670da-60ae-4559-a555-12f533cd317c.0vtn4o3qMik_cK3hJliW2uKCQUM'
+driver.get('https://www.google.com')
+sleep(3)
+driver.close()
